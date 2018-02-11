@@ -1,0 +1,95 @@
+# conky configuration
+#
+# The list of variables has been removed from this file in favour
+# of keeping the documentation more maintainable.
+# Check http://conky.sf.net for an up-to-date-list.
+#
+# For ideas about how to modify conky, please see:
+# http://conky.sourceforge.net/variables.html
+#
+# For help with conky, please see:
+# http://conky.sourceforge.net/documentation.html
+#
+# Enjoy! :)
+##############################################
+# Settings
+##############################################
+background no
+use_xft yes
+xftfont Liberation Sans:size=10
+xftalpha 1
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_transparent yes
+own_window_type auto
+#own_window_argb_visual yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size auto
+maximum_width auto
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color fff
+default_shade_color ffffff
+default_outline_color 828282
+alignment top_right
+gap_x 12
+gap_y 56
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+##############################################
+#  Output
+##############################################
+TEXT
+${color RED}M  E  L  Q  U  E   S  A  N  T  O  S
+${color}${hr}
+
+${color}S Y S T E M    I N F O
+${color}${hr}
+${color}Host:$alignr$nodename
+${color}Uptime:$alignr$uptime
+${color}RAM:$alignr$mem / $memmax
+${color}Swap usage:$alignr$swap / $swapmax
+${color}Disk usage:$alignr${fs_used /} / ${fs_size /}
+${color}CPU usage:$alignr${cpu cpu0}%
+${color}${hr}
+
+${color}S H O R T C U T    K E Y S
+${color}${hr}
+${color}Super+r$alignr Terminal Root
+${color}Super+t$alignr Terminal
+${color}Super+a$alignr Aplicativos
+${color}Super+w$alignr Navegador Chromium
+${color}${hr}
+
+${color}P R O C E S S O S
+${color}${hr}
+${color}Servicos:$alignr PID$alignr CPU%
+${color}${top name 1}$alignr ${top pid 1}$alignr ${top cpu 1}
+${color}${top name 2}$alignr ${top pid 2}$alignr ${top cpu 2}
+${color}${top name 3}$alignr ${top pid 3}$alignr ${top cpu 3}
+${color}${top name 4}$alignr ${top pid 4}$alignr ${top cpu 4}
+${color}${top name 5}$alignr ${top pid 5}$alignr ${top cpu 5}
+${hr}
+
+${color }R E D E
+${color}${hr}
+${color}Ethernet$alignr 
+${color}  IP Local:$alignr ${color}${addr enp3s0}
+${color}Down: ${color}${downspeedf enp3s0}k/s ${color}${alignr}Up: ${color}${upspeedf enp3s0}k/s$color
+#{color dark green}${downspeedgraph eth0 9,125 000000 000000} ${alignr}${color dark red}${upspeedgraph eth0 9,125 000000 000000}$color
+#${color}  Down:  ${color}${totaldown eth2}$alignr ${color}  UP:$alignr ${color}${totalup eth2}
+${color}Wireless $alignr${hr 2}$color
+${color}  IP Local $alignr ${color}${addr wlx0022433d7a9a}
+#{color white}${tab 20}AP ESSID: ${wireless_essid wlx0022433d7a9a} ${alignr}AP Bitrate: ${wireless_bitrate wlx0022433d7a9a}
+${color}Sinal: ${color light blue}${alignr} ${wireless_link_bar 7,75 wlx0022433d7a9a}   ${color}${wireless_link_qual_perc wlan0}%
+${color }  Down: ${color #484848}${downspeedf wlx0022433d7a9a}k/s ${color }${alignr}Up: ${color #484848}${upspeedf wlx0022433d7a9a}k/s$color
+#${color dark green}:${downspeedgraph wlan0 9,125 000000 000000} ${alignr}${color dark red}${upspeedgraph wlan0 9,125 000000 000000}$color
+#${tab 20}Total: ${totaldown wlan0}          Total: ${totalup wlan0}
+
+
